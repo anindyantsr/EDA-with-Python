@@ -88,7 +88,7 @@ sum_casual_df = create_sum_casual_df(main_day_df)
 sum_renters_df = create_sum_renters_df(main_hour_df)
 seasons_df = create_renters_season_df(main_hour_df)
 
-st.header('Bike Sharing Dashboard')
+st.header(':bike: Bike-sharing Dashboard')
  
 col1, col2, col3 = st.columns(3)
 
@@ -106,7 +106,7 @@ with col3:
 
 st.markdown("---")
 
-st.subheader("Daily Count of Bike Share Renters")
+st.subheader(":round_pushpin: Daily Count of Bike Share Renters")
 fig, ax = plt.subplots(figsize=(16, 8))
 ax.plot(
     day_df["dteday"],
@@ -120,9 +120,9 @@ ax.tick_params(axis='x', labelsize=15)
  
 st.pyplot(fig)
 
-st.subheader("Weekly Count of Bike Share Renters")
+st.subheader(":round_pushpin: Weekly Count of Bike Share Renters")
 fig, ax = plt.subplots(figsize=(10,5))
-colors = ["#D3D3D3", "#D3D3D3", "#E67F0D"]
+colors = ["#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3", "#E67F0D"]
 sns.barplot(
     x="weekday",
     y="cnt",
@@ -139,7 +139,7 @@ plt.tick_params(axis ='y', labelsize=15)
 
 st.pyplot(fig)
 
-st.subheader("Seasonly Count of Bike Share Renters")
+st.subheader(":round_pushpin: Seasonly Count of Bike Share Renters")
 fig, ax = plt.subplots(figsize=(10,5))
 colors = ["#D3D3D3", "#D3D3D3", "#D3D3D3", "#93C572"]
 sns.barplot(
@@ -158,4 +158,4 @@ ax.tick_params(axis ='y', labelsize=15)
 
 st.pyplot(fig)
 
-st.caption('Copyright (c) Anindyantsr')
+st.caption(':copyright: anindyantsr')
