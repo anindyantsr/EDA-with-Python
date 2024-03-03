@@ -120,27 +120,6 @@ ax.tick_params(axis='x', labelsize=15)
  
 st.pyplot(fig)
 
-st.subheader("Hours with The Most and The Fewest of Bike Share Renters")
-fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(30, 10))
-sns.barplot(x="hr", y="cnt", data=sum_renters_df.head(5), palette=["#D3D3D3", "#D3D3D3", "#F72585", "#D3D3D3", "#D3D3D3"], ax=ax[0])
-ax[0].set_ylabel(None)
-ax[0].set_xlabel("Hour in PM", fontsize=17)
-ax[0].set_title("Hours with Most Bike Renters", loc="center", fontsize=25)
-ax[0].tick_params(axis ='x', labelsize=20)
-ax[0].tick_params(axis ='y', labelsize=20)
-
-sns.barplot(x="hr", y="cnt", data=sum_renters_df.sort_values(by="hr", ascending=True).head(5), palette=["#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3", "#F72585"], ax=ax[1])
-ax[1].set_ylabel(None)
-ax[1].set_xlabel("Hour in AM", fontsize=22)
-ax[1].invert_xaxis()
-ax[1].yaxis.set_label_position("right")
-ax[1].yaxis.tick_right()
-ax[1].set_title("Hours with Fewest Bike Renters", loc="center", fontsize=25)
-ax[1].tick_params(axis ='x', labelsize=20)
-ax[1].tick_params(axis='y', labelsize=20)
-
-st.pyplot(fig)
-
 st.subheader("Weekly Count of Bike Share Renters")
 fig, ax = plt.subplots(figsize=(10,5))
 colors = ["#D3D3D3", "#D3D3D3", "#E67F0D"]
@@ -177,24 +156,6 @@ ax.set_title("Number of Renters by Season", loc="center", fontsize=20)
 ax.tick_params(axis ='x', labelsize=15)
 ax.tick_params(axis ='y', labelsize=15)
 
-st.pyplot(fig)
-
-st.subheader("Weather Count of Bike Share Renters")
-fig, ax = plt.subplots(figsize=(10,5))
-colors = ["#D3D3D3", "#D3D3D3", "#4CC9F0"]
-sns.barplot(
-    x="weathersit",
-    y="cnt",
-    data=day_df.sort_values(by="weathersit", ascending=False),
-    palette=colors,
-    ax=ax
-    )
-
-plt.xlabel(None)
-plt.ylabel(None)
-plt.title("Number of Renters by Weather", loc="center", fontsize=20)
-plt.tick_params(axis ='x', labelsize=15)
-plt.tick_params(axis ='y', labelsize=15)
 st.pyplot(fig)
 
 st.caption('Copyright (c) Anindyantsr')
